@@ -1,4 +1,4 @@
-﻿namespace TwitterAPI
+﻿namespace Twitter.Api
 {
     using System;
     using System.Collections.Generic;
@@ -153,23 +153,23 @@
 
             String signatureBaseString = "GET&" + lowercaseEncodings(strippedUrl) + "&" +
                                          (String.IsNullOrEmpty(countParam) ? String.Empty : lowercaseEncodings(countParam) + "%26") +
-                                         "oauth_consumer_key%3D" + lowercaseEncodings(ApiKey) + "%26" +
+                                         "oauth_consumer_key%3D" + lowercaseEncodings(ConsumerKey) + "%26" +
                                          "oauth_nonce%3D" + lowercaseEncodings(nonce) + "%26" +
                                          "oauth_signature_method%3DHMAC-SHA1%26" +
                                          "oauth_timestamp%3D" + timestamp + "%26" +
-                                         "oauth_token%3D" + lowercaseEncodings(ApiToken) + "%26" +
+                                         "oauth_token%3D" + lowercaseEncodings(AccessToken) + "%26" +
                                          "oauth_version%3D1.0" + restParams;
 
-            String sig = encode(signatureBaseString, Encoding.Default.GetBytes(ConsumerSecret + "&" + TokenSecret)); 
+            String sig = encode(signatureBaseString, Encoding.Default.GetBytes(ConsumerSecret + "&" + AccessTokenSecret)); 
 
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
             request.Method = method;
-            request.Headers.Add("Authorization", @"OAuth oauth_consumer_key=""" + ApiKey + @""", 
+            request.Headers.Add("Authorization", @"OAuth oauth_consumer_key=""" + ConsumerKey + @""", 
                                                          oauth_nonce=""" + nonce + @""", 
                                                          oauth_signature=""" + lowercaseEncodings(sig) + @""", 
                                                          oauth_signature_method=""HMAC-SHA1"", 
                                                          oauth_timestamp=""" + timestamp + @""", 
-                                                         oauth_token=""" + ApiToken + @""", 
+                                                         oauth_token=""" + AccessToken + @""", 
                                                          oauth_version=""1.0""");
             String responseString = String.Empty;
             try

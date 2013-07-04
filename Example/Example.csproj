@@ -48,13 +48,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TwitterAPI\TwitterAPI.csproj">
-      <Project>{13C25403-26C4-498B-A2A5-1F62DF34E105}</Project>
-      <Name>TwitterAPI</Name>
-    </ProjectReference>
+    <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <ProjectReference Include="..\Twitter.Api\Twitter.Api.csproj">
+      <Project>{13C25403-26C4-498B-A2A5-1F62DF34E105}</Project>
+      <Name>Twitter.Api</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

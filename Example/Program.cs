@@ -21,10 +21,10 @@ namespace Example
         static void Main(string[] args)
         {
             // Pass in all the OAuth keys to the constructor
-            var twitter = new TwitterAPI.Tweet("[YourConsumerKey]",
-                                               "[YourConsumerSecret]",
-                                               "[YourAccessToken]",
-                                               "[YourAccessTokenSecret]");
+            var twitter = new Twitter.Api.Tweet("[YourConsumerKey]",
+                                                "[YourConsumerSecret]",
+                                                "[YourAccessToken]",
+                                                "[YourAccessTokenSecret]");
 
             // API url for a list
             // https://api.twitter.com/1.1/lists/statuses.json?slug=[LISTNAME]&owner_screen_name=[ACCOUNTNAME]&count=[COUNT]
