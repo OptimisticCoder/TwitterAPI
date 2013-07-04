@@ -28,24 +28,24 @@
 
         #region Private Members
 
-        private String ApiKey = String.Empty;
-        private String ApiToken = String.Empty;
+        private String ConsumerKey = String.Empty;
         private String ConsumerSecret = String.Empty;
-        private String TokenSecret = String.Empty;
+        private String AccessToken = String.Empty;
+        private String AccessTokenSecret = String.Empty;
 
         #endregion
 
         #region Constructors
 
-        public Tweet(String apiKey,
-                     String apiToken,
+        public Tweet(String consumerKey,
                      String consumerSecret,
-                     String tokenSecret)
+                     String accessToken,
+                     String accessTokenSecret)
         {
-            ApiKey = apiKey;
-            ApiToken = apiToken;
+            ConsumerKey = consumerKey;
             ConsumerSecret = consumerSecret;
-            TokenSecret = tokenSecret;
+            AccessToken = accessToken;
+            AccessTokenSecret = accessTokenSecret;
         }
 
         public Tweet()

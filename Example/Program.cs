@@ -38,7 +38,12 @@ namespace Example
             // Loop through the returned Tweets.
             foreach (var t in tweets)
             {
-                Console.WriteLine(t.UserName + ": " + t.Status);
+                Console.WriteLine("UserName: " + t.UserName);
+                Console.WriteLine("DisplayName: " + t.DisplayName);
+                Console.WriteLine("ProfileImage: " + t.ProfileImage);
+                Console.WriteLine("StatusDate: " + t.StatusDate.ToString("dddd, dd MMMM yyyy - hh:mmtt"));
+                Console.WriteLine("Status: " + t.Status);
+                Console.WriteLine();
             }
 
             // Wait
